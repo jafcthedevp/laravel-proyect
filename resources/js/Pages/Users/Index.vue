@@ -32,6 +32,9 @@
                         <th class="border-b-2 border-gray-200 bg-gray-100 px-5 py-3 text-left text-xs font-semibold uppercase tracking-wider text-gray-600">
                             Correo
                         </th>
+                        <th class="border-b-2 border-gray-200 bg-gray-100 px-5 py-3 text-left text-xs font-semibold uppercase tracking-wider text-gray-600">
+                            Editar
+                        </th>
                     </tr>
                 </thead>
                 <tbody>
@@ -41,6 +44,9 @@
                         </td>
                         <td class="border-b border-gray-200 bg-white px-5 py-5 text-sm">
                             <p class="text-gray-900 whitespace-no-wrap">{{ user.email }}</p>
+                        </td>
+                        <td class="border-b border-gray-200 bg-white px-5 py-5 text-sm">
+                            
                         </td>
                     </tr>
                 </tbody>
@@ -61,4 +67,6 @@ import { Head } from '@inertiajs/vue3';
 const props = defineProps({
     users: Object
 })
+
+
 </script>

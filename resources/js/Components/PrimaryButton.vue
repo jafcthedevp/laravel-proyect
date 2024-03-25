@@ -1,7 +1,7 @@
 <template>
-    <button :type="type" class="rounded-md bg-indigo-600 px-4 py-2 text-center text-sm text-white hover:bg-indigo-500">
-        <slot />
-    </button>
+    <button :type="type" class="rounded-md bg-green-500 px-4 py-2 text-center text-sm text-white hover:bg-green-400">
+            <slot />
+        </button>
 </template>
 
 <script setup>

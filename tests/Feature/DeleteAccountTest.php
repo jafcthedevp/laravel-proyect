@@ -45,3 +45,4 @@ class DeleteAccountTest extends TestCase
         $this->assertNotNull($user->fresh());
     }
 }
+
