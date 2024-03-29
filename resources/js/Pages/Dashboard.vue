@@ -8,7 +8,7 @@
 
         <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
             <div class="p-6 border-b border-gray-200">
-                aqui va el panel principal!
+                <a :href="route('veterinaria.login')">Revisa el Home de la veterinaria</a>
             </div>
         </div>
     </AuthenticatedLayout>

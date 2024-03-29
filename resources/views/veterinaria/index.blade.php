@@ -6,23 +6,23 @@
   <title>patte - Home 1</title>
   <link rel="icon" href="assets/img/heading-img.png">
   <!-- CSS only -->
-   <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
-   <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
-   <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
-   <link rel="stylesheet" href="assets/css/slick.css">
-   <link rel="stylesheet" href="assets/css/slick-theme.css">
+   <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/bootstrap.min.css') }}">
+   <link rel="stylesheet" href="{{ asset('assets/css/owl.carousel.min.css') }} ">
+   <link rel="stylesheet" href="{{ asset('assets/css/owl.theme.default.min.css') }}">
+   <link rel="stylesheet" href="{{ asset('assets/css/slick.css') }}">
+   <link rel="stylesheet" href="{{ asset('assets/css/slick-theme.css') }}">
    <!-- fancybox -->
-   <link rel="stylesheet" href="assets/css/jquery.fancybox.min.css">
-   <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+   <link rel="stylesheet" href="{{ asset('assets/css/jquery.fancybox.min.css') }}">
+   <link rel="stylesheet" href="{{ asset('assets/css/fontawesome.min.css') }}">
    <!-- style -->
-   <link rel="stylesheet" href="assets/css/style.css">
+   <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
    <!-- responsive -->
-   <link rel="stylesheet" href="assets/css/responsive.css">
+   <link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}">
    <!-- color -->
-   <link rel="stylesheet" href="assets/css/color.css">
+   <link rel="stylesheet" href="{{ asset('assets/css/color.css') }}">
    <!-- jQuery -->
-   <script src="assets/js/jquery-3.6.0.min.js"></script>
-   <script src="assets/js/preloader.js"></script>
+   <script src="{{ asset('assets/js/jquery-3.6.0.min.js') }}"></script>
+   <script src="{{ asset('assets/js/preloader.js') }}"></script>
  </head>
 <body>
 <!-- loader -->
@@ -67,7 +67,7 @@
               </div>
             <div class="login">
                 <i class="fa-solid fa-user"></i>
-                <a href="login.html">Login / Register</a>
+                <a href="{{ route('veterinaria.login')}}">Login / Register</a>
               </div>
           </div>
         </div>
@@ -1047,10 +1047,10 @@
 </div>
 <!-- progress end -->
 <!-- Bootstrap Js -->
-<script src="assets/js/bootstrap.min.js"></script>
-<script src="assets/js/owl.carousel.min.js"></script>
-<script src="assets/js/slick.min.js"></script>
+<script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('assets/js/owl.carousel.min.js') }}"></script>
+<script src="{{ asset('assets/js/slick.min.js') }}"></script>
 <!-- fancybox -->
-<script src="assets/js/jquery.fancybox.min.js"></script>
-<script src="assets/js/custom.js"></script>
+<script src="{{ asset('assets/js/jquery.fancybox.min.js') }}"></script>
+<script src="{{ asset('assets/js/custom.js') }}"></script>
 </body>

@@ -32,30 +32,24 @@ export default {
             if (this.showNewIcon) {
                 this.name = this.$props.name;
                 this.email = this.$props.email;
-            } else {
-                this.saveChanges(this.name, this.email);
-            }
+            } 
         },
-        async saveChanges(name, email) {
-            this.name = name;
-            this.email = email;
-            // Aquí es donde harías tu llamada axios para guardar los cambios
-            try {
-                const response = await axios.post('/confirm-user', {
-                    name: this.name,
-                    email: this.email,
-                });
+        async updateProfile() {
+        try {
+            const response = await axios.patch('/profile', {
+                name: this.name,
+                email: this.email,
+                // Agrega aquí cualquier otro campo que desees actualizar
+            });
 
-                if (response.status === 200) {
-                    console.log("Los cambios se guardaron correctamente");
-                } else {
-                    console.error("Hubo un problema al guardar los cambios");
-                }
-            } catch (error) {
-                console.error(error);
-            }
-        },
-    },
+            // Maneja la respuesta de la solicitud aquí
+            console.log(response.data);
+        } catch (error) {
+            // Maneja cualquier error que ocurra durante la solicitud aquí
+            console.error(error);
+        }
+    }
+}
 };
 </script>
 

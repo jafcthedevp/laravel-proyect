@@ -3,7 +3,6 @@
 use App\Http\Controllers\PetController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\UsersConfirmsController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -38,13 +37,23 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
+
+    Route::get('/veterinaria', function () {
+            return view('veterinaria.index');
+        })->name('veterinaria.index');
+
+    Route::get('/veterinaria/login', function () {
+            return view('veterinaria.login');
+        })->name('veterinaria.login');
+
+    Route::post('/register', [App\Http\Controllers\RegisterController::class, 'register'])->name('register');
+        
     Route::get('/about', fn () => Inertia::render('About'))->name('about');
     Route::get('users', [UserController::class, 'index'])->name('users.index');
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-    Route::post('/confirm-user', [UsersConfirmsController::class, 'confirm']);
 
     /* Mascotas */
     Route::get('/pets', [PetController::class, 'index'])->name('pets.index');

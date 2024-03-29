@@ -97,9 +97,7 @@ const props = defineProps({
 
 const emit = defineEmits(['edit']);
 
-const saveChanges = (user) => {
-    editingUser.value = null;
-};
+
 </script>
 
 <style setup>
