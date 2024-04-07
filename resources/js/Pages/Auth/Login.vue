@@ -39,6 +39,12 @@
                     Ingresar
                 </PrimaryButton>
             </div>
+            <div class="mt-4">
+                <span class="text-sm text-gray-600">No tienes una cuenta? </span>
+                <Link :href="route('register')" class="text-sm text-blue-600 underline hover:text-blue-900">
+                    Regístrate
+                </Link>
+            </div>
         </form>
     </GuestLayout>
 </template>

@@ -35,9 +35,11 @@
                 <PrimaryButton class="w-full" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
                     Registrarse
                 </PrimaryButton>
-
-                <Link :href="route('login')" class="mt-4 text-sm text-gray-600 underline hover:text-gray-900">
-                    Ya registrado?
+            </div> 
+            <div class="mt-4">
+                <span class="text-sm text-gray-600">No tienes una cuenta? </span>
+                <Link :href="route('login')" class="text-sm text-blue-600 underline hover:text-blue-900">
+                    Inicia sesión
                 </Link>
             </div>
         </form>

@@ -17,26 +17,15 @@ use Inertia\Inertia;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return Inertia::render('Welcome', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-    ]);
-});
-
-Route::get('/index', function () {
-    return Inertia::render('index');
-})->name('index');
-
-
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
+
+    Route::get('/veterinaria-registro', function () {
+        return Inertia::render('Vetregister');
+    })->name('veterinaria.register');
 
     Route::get('/veterinaria', function () {
             return view('veterinaria.index');
@@ -45,6 +34,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/veterinaria/login', function () {
             return view('veterinaria.login');
         })->name('veterinaria.login');
+
+    Route::get('/veterinaria/register', function () {
+            return view('veterinaria.register');
+        })->name('veterinaria.register');
 
     Route::post('/register', [App\Http\Controllers\RegisterController::class, 'register'])->name('register');
         
@@ -66,4 +59,11 @@ Route::middleware('auth')->group(function () {
 require __DIR__.'/auth.php';
 
 
+Route::get('/admin', 'AdminController@index')->middleware(['auth', 'admin'])->name('admin.dashboard');
+
+Route::get('/shop', 'ShopController@index')->middleware(['auth', 'shop'])->name('shop.dashboard');
+
+Route::get('/user', 'UserController@index')->middleware(['auth', 'user'])->name('user.dashboard');
+
+Route::get('/vetregister', 'VetRegisterController@index')->middleware(['auth', 'vetregister'])->name('vetregister.dashboard');
 
